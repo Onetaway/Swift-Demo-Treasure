@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class Treasure {
+class Treasure: NSObject {
     
     let what: String
     let location: GeoLocation

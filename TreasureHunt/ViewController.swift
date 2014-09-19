@@ -56,9 +56,28 @@ class ViewController: UIViewController {
             HQTreasure(company: "Facebook", latitude: 37.485955, longitude: -122.148555),
             
             HQTreasure(company: "Google", latitude: 37.422, longitude: -122.084)]
+        
+        self.mapView.delegate = self
+        self.mapView.addAnnotations(self.treasures)
     }
     
     
+}
+
+
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        
+        if let treasure = annotation as? Treasure {
+            
+            var view = mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as MKPinAnnotationView!
+            
+            if view == nil {
+                
+            }
+        }
+    }
 }
 
 
